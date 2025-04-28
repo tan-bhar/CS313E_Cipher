@@ -161,41 +161,47 @@ def vigenere_decode(string, phrase):
 
 def main():
     """Main function that reads stdin and runs each cipher"""
+    print("Rail Fence Cipher")
+    print()
     # read the plain text from stdin (terminal/input)
-    plain_text = input()
+    plain_text = input("Plain Text: ")
 
     # read the key from stdin (terminal/input)
-    key = int(input())
+    key = int(input("Key: "))
 
     # encrypt and print the encoded text using rail fence cipher
-    print(rail_fence_encode(plain_text, key))
+    print("Encoded Text: " + rail_fence_encode(plain_text, key))
+    print()
 
     # read encoded text from stdin (terminal/input)
-    encoded_text = input()
+    encoded_text = input("Encoded Text: ")
 
     # read the key from stdin (terminal/input)
-    key = int(input())
+    key = int(input("Key: "))
 
     # decrypt and print the plain text using rail fence cipher
-    print(rail_fence_decode(encoded_text, key))
+    print("Decoded Text: " + rail_fence_decode(encoded_text, key))
+    print()
+    print("Vigenere Cipher")
+    print()
 
     # read the plain text from stdin (terminal/input)
-    plain_text = input()
+    plain_text = input("Plain Text: ")
 
     # read the pass phrase from stdin (terminal/input)
-    phrase = input()
+    phrase = input("Pass Phrase: ")
 
     # encrypt and print the encoded text using Vigenere cipher
-    print(vigenere_encode(plain_text, phrase))
-
+    print("Encoded Text: " + vigenere_encode(plain_text, phrase))
+    print()
     # read the encoded text from stdin (terminal/input)
-    encoded_text = input()
+    encoded_text = input("Encoded Text: ")
 
     # read the pass phrase from stdin (terminal/input)
-    phrase = input()
+    phrase = input("Pass Phrase: ")
 
     # decrypt and print the plain text using Vigenere cipher
-    print(vigenere_decode(encoded_text, phrase))
+    print("Decoded Text: " + vigenere_decode(encoded_text, phrase))
 
 
 # Do NOT modify the following code.
