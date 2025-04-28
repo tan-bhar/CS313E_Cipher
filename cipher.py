@@ -15,7 +15,6 @@ Students. Academic penalties up to and including an F in the course are likely.
 UT EID 1: tpb675
 UT EID 2: tpb675
 """
-import sys
 
 def rail_fence_encode(string, key):
     """
@@ -162,51 +161,69 @@ def vigenere_decode(string, phrase):
 
 def main():
     """Main function that reads stdin and runs each cipher"""
+    lines = sys.stdin.read().splitlines()
+    idx = 0
+
     print("Rail Fence Cipher")
     print()
 
-    # Read input from stdin using sys.stdin.read() (split to simulate multiple inputs)
-    data = sys.stdin.read().splitlines()
-    input()
+    # Plain Text
+    plain_text = lines[idx].strip()
+    idx += 1
 
-    # Plain text input from stdin
-    plain_text = data[0]
+    # Key
+    key = int(lines[idx].strip())
+    idx += 1
 
-    # Key input from stdin
-    key = int(data[1])
+    # Encrypt and print encoded text
+    encoded = rail_fence_encode(plain_text, key)
+    print(f"Plain Text: {plain_text}")
+    print(f"Key: {key}")
+    print(f"Encoded Text: {encoded}\n")
 
-    # Encrypt and print the encoded text using rail fence cipher
-    print(f"Encoded Text: {rail_fence_encode(plain_text, key)}\n")
+    # Encoded Text
+    encoded_text = lines[idx].strip()
+    idx += 1
 
-    # Read encoded text from stdin
-    encoded_text = data[2]
+    # Key again
+    key = int(lines[idx].strip())
+    idx += 1
 
-    # Key input for decoding
-    key = int(data[3])
-
-    # Decrypt and print the plain text using rail fence cipher
-    print(f"Decoded Text: {rail_fence_decode(encoded_text, key)}\n")
+    # Decrypt and print decoded text
+    decoded = rail_fence_decode(encoded_text, key)
+    print(f"Encoded Text: {encoded_text}")
+    print(f"Enter Key: {key}")
+    print(f"Decoded Text: {decoded}\n")
 
     print("Vigenere Cipher\n")
 
-    # Plain text input for Vigenere cipher
-    plain_text = data[4]
+    # Plain Text
+    plain_text = lines[idx].strip()
+    idx += 1
 
-    # Pass phrase input for Vigenere cipher
-    phrase = data[5]
+    # Pass Phrase
+    phrase = lines[idx].strip()
+    idx += 1
 
-    # Encrypt and print the encoded text using Vigenere cipher
-    print(f"Encoded Text: {vigenere_encode(plain_text, phrase)}\n")
+    # Encrypt and print encoded text
+    encoded = vigenere_encode(plain_text, phrase)
+    print(f"Plain Text: {plain_text}")
+    print(f"Pass Phrase: {phrase}")
+    print(f"Encoded Text: {encoded}\n")
 
-    # Read the encoded text for Vigenere cipher from stdin
-    encoded_text = data[6]
+    # Encoded Text
+    encoded_text = lines[idx].strip()
+    idx += 1
 
-    # Pass phrase input for decoding
-    phrase = data[7]
+    # Pass Phrase again
+    phrase = lines[idx].strip()
+    idx += 1
 
-    # Decrypt and print the plain text using Vigenere cipher
-    print(f"Decoded Text: {vigenere_decode(encoded_text, phrase)}")
-
+    # Decrypt and print decoded text
+    decoded = vigenere_decode(encoded_text, phrase)
+    print(f"Encoded Text: {encoded_text}")
+    print(f"Pass Phrase: {phrase}")
+    print(f"Decoded Text: {decoded}")
 
 # Do NOT modify the following code.
 if __name__ == "__main__":
