@@ -163,6 +163,7 @@ def main():
     """Main function that reads stdin and runs each cipher"""
     print("Rail Fence Cipher")
     print()
+
     # read the plain text from stdin (terminal/input)
     plain_text = input("Plain Text: ")
 
@@ -170,18 +171,25 @@ def main():
     key = int(input("Key: "))
 
     # encrypt and print the encoded text using rail fence cipher
-    print("Encoded Text: " + rail_fence_encode(plain_text, key))
+    encoded_text = rail_fence_encode(plain_text, key)
+    print("\nPlain Text: " + plain_text)
+    print("Key: " + str(key))
+    print("Encoded Text: " + encoded_text)
     print()
 
     # read encoded text from stdin (terminal/input)
-    encoded_text = input("Encoded Text: ")
+    encoded_text_input = input("Encoded Text: ")
 
     # read the key from stdin (terminal/input)
     key = int(input("Key: "))
 
     # decrypt and print the plain text using rail fence cipher
-    print("Decoded Text: " + rail_fence_decode(encoded_text, key))
+    decoded_text = rail_fence_decode(encoded_text_input, key)
+    print("\nEncoded Text: " + encoded_text_input)
+    print("Enter Key: " + str(key))
+    print("Decoded Text: " + decoded_text)
     print()
+
     print("Vigenere Cipher")
     print()
 
@@ -192,18 +200,27 @@ def main():
     phrase = input("Pass Phrase: ")
 
     # encrypt and print the encoded text using Vigenere cipher
-    print("Encoded Text: " + vigenere_encode(plain_text, phrase))
+    encoded_text = vigenere_encode(plain_text, phrase)
+    print("\nPlain Text: " + plain_text)
+    print("Pass Phrase: " + phrase)
+    print("Encoded Text: " + encoded_text)
     print()
+
     # read the encoded text from stdin (terminal/input)
-    encoded_text = input("Encoded Text: ")
+    encoded_text_input = input("Encoded Text: ")
 
     # read the pass phrase from stdin (terminal/input)
     phrase = input("Pass Phrase: ")
 
     # decrypt and print the plain text using Vigenere cipher
-    print("Decoded Text: " + vigenere_decode(encoded_text, phrase))
+    decoded_text = vigenere_decode(encoded_text_input, phrase)
+    print("\nEncoded Text: " + encoded_text_input)
+    print("Pass Phrase: " + phrase)
+    print("Decoded Text: " + decoded_text)
+    print()
 
 
 # Do NOT modify the following code.
 if __name__ == "__main__":
     main()
+    
