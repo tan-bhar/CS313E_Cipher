@@ -16,6 +16,8 @@ UT EID 1: tpb675
 UT EID 2: tpb675
 """
 
+import sys
+
 def rail_fence_encode(string, key):
     """
     pre: string is a string of characters and key is a positive
