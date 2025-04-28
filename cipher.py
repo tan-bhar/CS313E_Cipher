@@ -15,6 +15,7 @@ Students. Academic penalties up to and including an F in the course are likely.
 UT EID 1: tpb675
 UT EID 2: tpb675
 """
+import sys
 
 def rail_fence_encode(string, key):
     """
@@ -163,44 +164,50 @@ def main():
     """Main function that reads stdin and runs each cipher"""
     print("Rail Fence Cipher")
     print()
-    # read the plain text from stdin (terminal/input)
-    plain_text = input("Plain Text: \n")
 
-    # read the key from stdin (terminal/input)
-    key = int(input("Key: \n"))
+    # Read input from stdin using sys.stdin.read() (split to simulate multiple inputs)
+    data = sys.stdin.read().splitlines()
+    input()
 
-    # encrypt and print the encoded text using rail fence cipher
+    # Plain text input from stdin
+    plain_text = data[0]
+
+    # Key input from stdin
+    key = int(data[1])
+
+    # Encrypt and print the encoded text using rail fence cipher
     print(f"Encoded Text: {rail_fence_encode(plain_text, key)}\n")
 
-    # read encoded text from stdin (terminal/input)
-    encoded_text = input("Encoded Text: ")
+    # Read encoded text from stdin
+    encoded_text = data[2]
 
-    # read the key from stdin (terminal/input)
-    key = int(input("Key: "))
+    # Key input for decoding
+    key = int(data[3])
 
-    # decrypt and print the plain text using rail fence cipher
+    # Decrypt and print the plain text using rail fence cipher
     print(f"Decoded Text: {rail_fence_decode(encoded_text, key)}\n")
+
     print("Vigenere Cipher\n")
 
-    # read the plain text from stdin (terminal/input)
-    plain_text = input("Plain Text: \n")
+    # Plain text input for Vigenere cipher
+    plain_text = data[4]
 
-    # read the pass phrase from stdin (terminal/input)
-    phrase = input("Pass Phrase: \n")
+    # Pass phrase input for Vigenere cipher
+    phrase = data[5]
 
-    # encrypt and print the encoded text using Vigenere cipher
+    # Encrypt and print the encoded text using Vigenere cipher
     print(f"Encoded Text: {vigenere_encode(plain_text, phrase)}\n")
-    # read the encoded text from stdin (terminal/input)
-    encoded_text = input("Encoded Text: \n")
 
-    # read the pass phrase from stdin (terminal/input)
-    phrase = input("Pass Phrase: \n")
+    # Read the encoded text for Vigenere cipher from stdin
+    encoded_text = data[6]
 
-    # decrypt and print the plain text using Vigenere cipher
+    # Pass phrase input for decoding
+    phrase = data[7]
+
+    # Decrypt and print the plain text using Vigenere cipher
     print(f"Decoded Text: {vigenere_decode(encoded_text, phrase)}")
 
 
 # Do NOT modify the following code.
 if __name__ == "__main__":
     main()
-    
