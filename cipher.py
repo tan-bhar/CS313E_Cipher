@@ -16,7 +16,6 @@ UT EID 1: tpb675
 UT EID 2: tpb675
 """
 
-# TODO: implement this function. You may delete this comment after you are done.
 def rail_fence_encode(string, key):
     """
     pre: string is a string of characters and key is a positive
@@ -40,7 +39,6 @@ def rail_fence_encode(string, key):
     return "".join(rows)
 
 
-# TODO: implement this function. You may delete this comment after you are done.
 def rail_fence_decode(string, key):
     """
     pre: string is a string of characters and key is a positive
@@ -81,7 +79,6 @@ def rail_fence_decode(string, key):
     return res
 
 
-# TODO: implement this function. You may delete this comment after you are done.
 def filter_string(string):
     """
     pre: string is a string of characters
@@ -98,7 +95,6 @@ def filter_string(string):
 
     return res
 
-# TODO: implement this function. You may delete this comment after you are done.
 def encode_character(p, s):
     """
     pre: p is a character in the pass phrase and s is a character
@@ -106,15 +102,15 @@ def encode_character(p, s):
     post: function returns a single character encoded using the
         Vigenere algorithm. You may not use a 2-D list
     """
-    shift = ord(p) - ord("a")
-    original = ord(s) - ord("a")
+    a = ord("a")
+    shift = ord(p) - a
+    original = ord(s) - a
     shifted = (original + shift) % 26
-    encoded_char = chr(shifted + ord("a"))
+    encoded_char = chr(shifted + a)
 
     return encoded_char
 
 
-# TODO: implement this function. You may delete this comment after you are done.
 def decode_character(p, s):
     """
     pre: p is a character in the pass phrase and s is a character
@@ -126,12 +122,11 @@ def decode_character(p, s):
     shift = ord(p) - a
     original = ord(s) - a
     shifted = (original - shift) % 26
-    decoded_char = chr(shifted + ord("a"))
+    decoded_char = chr(shifted + a)
 
     return decoded_char
 
 
-# TODO: implement this function. You may delete this comment after you are done.
 def vigenere_encode(string, phrase):
     """
     pre: string is a string of characters and phrase is a pass phrase
@@ -148,7 +143,6 @@ def vigenere_encode(string, phrase):
     return res
 
 
-# TODO: implement this function. You may delete this comment after you are done.
 def vigenere_decode(string, phrase):
     """
     pre: string is a string of characters and phrase is a pass phrase
@@ -165,7 +159,6 @@ def vigenere_decode(string, phrase):
     return res
 
 
-# TODO: implement this function. You may delete this comment after you are done.
 def main():
     """Main function that reads stdin and runs each cipher"""
     # read the plain text from stdin (terminal/input)
